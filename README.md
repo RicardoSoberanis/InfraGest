@@ -31,7 +31,7 @@ Ejecuta los siguientes comandos en tu terminal:
    ```
 2. Instalar las dependencias requeridas (incluidas en `requirements.txt`):
    ```bash
-   pip install pymongo
+   pip install -r requirements.txt
    ```
 
 ---
