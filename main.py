@@ -9,5 +9,8 @@ from fastapi import FastAPI
 from pymongo import MongoClient
 
 
-import model
+import model_dgraph
+import model_cassandra
+import model_mongo
+
 
