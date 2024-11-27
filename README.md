@@ -1,4 +1,3 @@
-Aquí tienes un formato mejorado para tu documentación en `README.md`:
 
 ---
 
