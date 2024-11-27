@@ -3,7 +3,7 @@ def get_service_consumption_by_component(session, service_type):
     SELECT * FROM service_consumption_by_component 
     WHERE service_type = %s;
     """
-    return session.execute(query, (component_id,))
+    return session.execute(query, (service_type,))
 
 def get_traffic_flow_by_sensor(session, sensor_id):
     query = """
