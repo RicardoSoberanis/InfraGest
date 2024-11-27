@@ -48,8 +48,8 @@ def main():
         option = int(input('Enter your choice: '))
 
         if option == 1:
-            component = input("Enter the component ID: ")
-            result = model.get_service_consumption_by_component(session, component)
+            component = input("Enter the service type: ")
+            result = model.get_service_consumption_by_component(session, service_type)
             print(result)
 
         elif option == 2:
@@ -68,7 +68,7 @@ def main():
             print(result)
 
         elif option == 5:
-            street_id = input("Enter the street/component ID: ")
+            street_id = input("Enter the street: ")
             result = model.get_traffic_flow_by_street(session, street_id)
             print(result)
 
