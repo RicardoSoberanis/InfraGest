@@ -1,3 +1,38 @@
+#!/usr/bin/env python3
+import logging
+
+# Set logger
+log = logging.getLogger()
+
+
+CREATE_KEYSPACE = """
+        CREATE KEYSPACE IF NOT EXISTS {}
+        WITH replication = {{ 'class': 'SimpleStrategy', 'replication_factor': {} }}
+"""
+
+service_consumption_by_component = """
+    CREATE TABLE IF NOT EXISTS service_consumption_by_component (
+    component_id TEXT,
+    service_type TEXT,
+    consumption TEXT,
+    timestamp TIMESTAMP,
+    PRIMARY KEY (component_id, service_type)
+);
+
+"""
+
+sensor_data_by_type = """
+    CREATE TABLE IF NOT EXISTS sensor_data_by_type (
+    sensor_id TEXT,
+    sensor_type TEXT,
+    data FLOAT,
+    timestamp TIMESTAMP,
+    PRIMARY KEY (sensor_id, sensor_type)
+);
+
+"""
+
+
 def get_service_consumption_by_component(session, service_type):
     query = """
     SELECT * FROM service_consumption_by_component 
